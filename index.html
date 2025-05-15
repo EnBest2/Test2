@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Intelligens Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Intelligens Task Manager</h1>
+  </header>
+  <main>
+    <div class="column" data-status="todo">
+      <h2>Teendők</h2>
+      <button class="add-task" data-status="todo">+ Új feladat</button>
+      <div class="task-list"></div>
+    </div>
+    <div class="column" data-status="in-progress">
+      <h2>Folyamatban</h2>
+      <button class="add-task" data-status="in-progress">+ Új feladat</button>
+      <div class="task-list"></div>
+    </div>
+    <div class="column" data-status="done">
+      <h2>Elkészült</h2>
+      <button class="add-task" data-status="done">+ Új feladat</button>
+      <div class="task-list"></div>
+    </div>
+  </main>
+
+  <!-- Rejtett modális ablak feladat felvételhez/szerkesztéshez -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <form id="task-form">
+        <input type="hidden" id="task-id">
+        <input type="hidden" id="task-status">
+        <div class="form-group">
+          <label for="task-title">Cím:</label>
+          <input type="text" id="task-title" required>
+        </div>
+        <div class="form-group">
+          <label for="task-desc">Leírás:</label>
+          <textarea id="task-desc" rows="4"></textarea>
+        </div>
+        <button type="submit">Mentés</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
